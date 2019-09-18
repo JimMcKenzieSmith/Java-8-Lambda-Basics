@@ -1,4 +1,4 @@
-package com.lambdatest;
+package com.lambdatest.unit1;
 
 @FunctionalInterface
 public interface Greeting {

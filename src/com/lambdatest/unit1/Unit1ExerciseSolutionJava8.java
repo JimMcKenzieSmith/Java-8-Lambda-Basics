@@ -1,6 +1,7 @@
-package com.lambdatest;
+package com.lambdatest.unit1;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 
 public class Unit1ExerciseSolutionJava8 {
@@ -18,18 +19,15 @@ public class Unit1ExerciseSolutionJava8 {
 	Collections.sort(people, (p1, p2) -> p1.getLastName().compareTo(p2.getLastName()));
 	
 	//printAll(people);
+	System.out.println("All:");
+	printConditionally(people, p -> true);
 	
+	System.out.println("Starts with S:");
 	printConditionally(people, p -> p.getLastName().startsWith("S"));
 	
 
 	}
 
-	private static void printAll(List<Person> people) {
-		for(Person person : people) {
-			System.out.println(person);
-		}
-		
-	}
 	
 	private static void printConditionally(List<Person> people, Condition condition) {
 		for(Person person : people) {
@@ -41,6 +39,7 @@ public class Unit1ExerciseSolutionJava8 {
 }
 
 interface Condition {
-	
 	boolean test(Person p);
 }
+
+
